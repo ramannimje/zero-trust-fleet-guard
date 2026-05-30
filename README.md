@@ -55,6 +55,19 @@ AirShield-Compliance is a production-ready reference implementation for enterpri
    ```
 4. Open the local development URL and watch devices, alerts, and audit trails update in real time.
 
+## Docker Deployment
+
+From the `airshield-compliance` root, build and launch the services:
+
+```bash
+docker compose build
+docker compose up
+```
+
+The frontend will be available at `http://localhost:5173` and the backend API will be available at `http://localhost:8000`.
+
+The frontend is served through Nginx and proxies `/api/` requests to the backend service.
+
 ## Notes
 
 - The AI governance layer is built for structured JSON outputs using Pydantic validation.

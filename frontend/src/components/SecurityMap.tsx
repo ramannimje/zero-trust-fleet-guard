@@ -27,7 +27,9 @@ interface SecurityMapProps {
 
 export default function SecurityMap({ devices, geofence, onSelectDevice }: SecurityMapProps) {
   const center: LatLngExpression = [37.7825, -122.397]
-  const polygon = geofence?.polygon.map((point) => [point[0], point[1]]) ?? []
+  const polygon: [number, number][] = geofence?.polygon.map(
+    (point) => [point[0], point[1]] as [number, number],
+  ) ?? []
 
   return (
     <div className="security-map">
